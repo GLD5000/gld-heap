@@ -100,3 +100,23 @@ export function createHeap(props: { type: string; initValues: number[] }) {
     return heapType === "min" ? a < b : a > b;
   }
 }
+const maxHeap = createHeap({
+  type: "max",
+  initValues: [3, 56, 89, 4, 3, 2, 5],
+});
+
+console.log("Max root:", maxHeap.root());
+
+const minHeap = createHeap({
+  type: "min",
+  initValues: [3, 56, 89, 4, 3, 2, 5],
+});
+
+console.log("Min root:", minHeap.root());
+
+maxHeap.removeRoot();
+minHeap.removeRoot();
+
+console.log("Max root:", maxHeap.root());
+
+console.log("Min root:", minHeap.root());
